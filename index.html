@@ -192,7 +192,7 @@
   /* ============ SLIDE — Agenda (NEW) ============ */
   .sA{background:linear-gradient(180deg,#FFFDF8 0%, #F7F2E8 100%)}
   .sA .body{padding:14px 56px 56px 56px;display:flex;flex-direction:column}
-  .agenda-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;flex:1;align-content:center}
+  .agenda-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3, auto);grid-auto-flow:column;gap:12px 24px;flex:1;align-content:center}
   .ag-item{display:grid;grid-template-columns:54px 1fr;gap:18px;align-items:flex-start;background:var(--paper);border:1px solid var(--ink-08);border-radius:12px;padding:18px 22px;position:relative;overflow:hidden}
   .ag-item::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px}
   .ag-item.a1::before{background:var(--sga-blue)}
@@ -238,6 +238,56 @@
   .gd-thesis .gd-text h4{font:500 20px/1.2 var(--serif);letter-spacing:-0.015em;color:#fff;margin-bottom:4px}
   .gd-thesis .gd-text h4 em{font-style:italic;color:var(--sga-lime)}
   .gd-thesis .gd-text p{font:500 12px/1.5 var(--sans);color:#E6ECF4}
+
+  /* ============ 4-Phase Growth Model strip (slide 4 add) ============ */
+  .phase-model{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:2px}
+  .pm-step{background:var(--paper);border:1px solid var(--ink-08);border-radius:10px;padding:10px 14px 11px;display:flex;flex-direction:column;gap:3px;position:relative;overflow:hidden}
+  .pm-step::before{content:"";position:absolute;top:0;left:0;right:0;height:2px}
+  .pm-step.pm0::before{background:var(--ink-40)}
+  .pm-step.pm1::before{background:var(--sga-blue)}
+  .pm-step.pm2::before{background:var(--sga-lime-deep)}
+  .pm-step.pm3::before{background:var(--sga-orange)}
+  .pm-step .pm-num{font:700 8.5px/1 var(--mono);letter-spacing:.16em;color:var(--ink-40)}
+  .pm-step h5{font:700 13px/1.1 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--sga-blue-ink);margin-top:1px}
+  .pm-step.pm0 h5{color:var(--ink-60)}
+  .pm-step.pm1 h5{color:var(--sga-blue)}
+  .pm-step.pm2 h5{color:var(--sga-lime-deep)}
+  .pm-step.pm3 h5{color:var(--sga-orange)}
+  .pm-step p{font:500 10.5px/1.4 var(--sans);color:var(--ink-60)}
+
+  /* ============ SLIDE — Advanced Care Plan (NEW) ============ */
+  .sAC{background:linear-gradient(180deg,#FFFFFF,#F2F5FA)}
+  .sAC .body{padding:14px 56px 50px 56px;display:flex;flex-direction:column;gap:14px;justify-content:center}
+  .ac-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .ac-card{background:var(--paper);border:1px solid var(--ink-08);border-radius:14px;padding:20px 24px 20px;display:flex;flex-direction:column;gap:8px;position:relative;overflow:hidden}
+  .ac-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px}
+  .ac-card.ac1::before{background:var(--sga-blue)}
+  .ac-card.ac2::before{background:var(--sga-orange)}
+  .ac-card.ac3::before{background:var(--sga-lime-deep)}
+  .ac-card .ac-num{font:700 11px/1 var(--mono);letter-spacing:.16em;color:var(--ink-40)}
+  .ac-card .ac-tag{font:700 9.5px/1.2 var(--sans);letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;gap:7px}
+  .ac-card .ac-tag::before{content:"";width:14px;height:2px;flex-shrink:0}
+  .ac-card.ac1 .ac-tag{color:var(--sga-blue)}.ac-card.ac1 .ac-tag::before{background:var(--sga-blue)}
+  .ac-card.ac2 .ac-tag{color:var(--sga-orange)}.ac-card.ac2 .ac-tag::before{background:var(--sga-orange)}
+  .ac-card.ac3 .ac-tag{color:var(--sga-lime-deep)}.ac-card.ac3 .ac-tag::before{background:var(--sga-lime-deep)}
+  .ac-card h3{font:500 21px/1.18 var(--serif);letter-spacing:-0.02em;color:var(--sga-blue-ink);margin-top:2px}
+  .ac-card h3 em{font-style:italic;color:var(--sga-blue)}
+  .ac-card.ac2 h3 em{color:var(--sga-orange)}
+  .ac-card.ac3 h3 em{color:var(--sga-lime-deep)}
+  .ac-card .ac-lead{font:500 12.5px/1.5 var(--sans);color:var(--ink-60)}
+  .ac-card ul{list-style:none;display:flex;flex-direction:column;gap:7px;margin-top:6px;padding-top:12px;border-top:1px dashed var(--ink-15)}
+  .ac-card li{font:500 11.5px/1.4 var(--sans);color:var(--ink);padding-left:14px;position:relative}
+  .ac-card li::before{content:"";position:absolute;left:0;top:6px;width:5px;height:5px;border-radius:50%}
+  .ac-card.ac1 li::before{background:var(--sga-blue)}
+  .ac-card.ac2 li::before{background:var(--sga-orange)}
+  .ac-card.ac3 li::before{background:var(--sga-lime-deep)}
+  .ac-callout{display:flex;align-items:center;gap:18px;padding:12px 22px;background:var(--sga-blue-ink);border-radius:12px;color:#fff;position:relative;overflow:hidden}
+  .ac-callout::before{content:"";position:absolute;right:-40px;top:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(196,211,71,.22),transparent 65%)}
+  .ac-callout .ac-stat{font:600 28px/1 var(--serif);color:var(--sga-lime);letter-spacing:-0.02em;flex-shrink:0;position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+  .ac-callout .ac-stat small{font:600 8.5px/1.2 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:rgba(196,211,71,.85)}
+  .ac-callout .ac-text{position:relative}
+  .ac-callout .ac-text p{font:500 12px/1.5 var(--sans);color:#E6ECF4}
+  .ac-callout .ac-text p strong{color:#fff;font-weight:700}
 
   /* ============ SLIDE — Strategic Shift (NEW) ============ */
   .sS{background:linear-gradient(180deg,#FFFFFF,#F2F5FA)}
@@ -611,7 +661,7 @@
 
       <div class="chrome-bottom">
         <div>Marketing Program Overview</div>
-        <div class="ix"><span class="n">01</span><span>/ 16</span></div>
+        <div class="ix"><span class="n">01</span><span>/ 17</span></div>
       </div>
     </section>
 
@@ -689,7 +739,7 @@
 
       <div class="chrome-bottom">
         <div>Agenda · Ressler × SGA Growth Department</div>
-        <div class="ix"><span class="n">02</span><span>/ 16</span></div>
+        <div class="ix"><span class="n">02</span><span>/ 17</span></div>
       </div>
     </section>
 
@@ -764,7 +814,7 @@
 
       <div class="chrome-bottom">
         <div>SGA Growth Team · The leaders behind the engine</div>
-        <div class="ix"><span class="n">03</span><span>/ 16</span></div>
+        <div class="ix"><span class="n">03</span><span>/ 17</span></div>
       </div>
     </section>
 
@@ -816,6 +866,29 @@
 
         </div>
 
+        <div class="phase-model">
+          <div class="pm-step pm0">
+            <span class="pm-num">PHASE 0</span>
+            <h5>Align</h5>
+            <p>Access + revenue understanding before we touch demand.</p>
+          </div>
+          <div class="pm-step pm1">
+            <span class="pm-num">PHASE 1</span>
+            <h5>Foundation</h5>
+            <p>Five gates that block spend. Close them before we activate paid.</p>
+          </div>
+          <div class="pm-step pm2">
+            <span class="pm-num">PHASE 2</span>
+            <h5>Engine</h5>
+            <p>Multiply every patient — retention, referrals, reactivation, organic.</p>
+          </div>
+          <div class="pm-step pm3">
+            <span class="pm-num">PHASE 3</span>
+            <h5>Signal</h5>
+            <p>Prove it, then scale. Tracking + differentiation + spend.</p>
+          </div>
+        </div>
+
         <div class="gd-thesis">
           <span class="gd-mark">“</span>
           <div class="gd-text">
@@ -831,273 +904,96 @@
 
       <div class="chrome-bottom">
         <div>How SGA Growth works · Absorption first, then spend</div>
-        <div class="ix"><span class="n">04</span><span>/ 16</span></div>
+        <div class="ix"><span class="n">04</span><span>/ 17</span></div>
       </div>
     </section>
 
     <!-- ========================================================
-         SLIDE 5 — Infrastructure
+         SLIDE 5 — Advanced Care Plan (NEW)
          ======================================================== -->
-    <section class="slide s2 has-chapter" data-slide="2">
+    <section class="slide sAC has-chapter" data-slide="5">
       <div class="chrome-top">
         <div class="brand"><img src="assets/sga-logo.svg" alt="SGA" /></div>
-        <div class="meta">Chapter 01 · Infrastructure</div>
+        <div class="meta">Chapter 01 · Advanced Care</div>
       </div>
 
       <div class="intro-header">
-        <div class="eyebrow">Funnel · Ownership · Tech</div>
-        <h2>The patient funnel, <em>who owns it</em>, and the stack behind it.</h2>
+        <div class="eyebrow">Advanced Care</div>
+        <h2>Supercharging the <em>DTC playbook</em>.</h2>
         <p class="sub">
-          One view across stages, team roles, and the tech that powers each step — so every
-          lead has a clear path from ad to closed case.
+          The SGA Advanced Care team supports our implant and cosmetic
+          practices — those already running direct‑to‑consumer marketing.
+          Ressler sits in this group. We help these practices turn the
+          dial up. Here's the playbook.
         </p>
       </div>
 
       <div class="body">
-        <div class="funnel-stack">
-          <div class="col-label">Patient Stage</div>
-          <div class="mhead">
-            <div class="col-label">Category</div>
-            <div class="col-label">Team Role</div>
-            <div class="col-label">Tech Stack</div>
-          </div>
+        <div class="ac-grid">
 
-          <div class="fseg f1"><div class="name">Potential Patient Lead</div></div>
-          <div class="mrow">
-            <div class="cat lead">Lead Generation</div>
-            <div class="role-col">Agency</div>
-            <div class="tech">
-              <span class="t">Google</span>
-              <span class="t">Meta</span>
-              <span class="t">Programmatic DSP</span>
-              <span class="t">TV</span>
-              <span class="t">Radio</span>
-              <span class="t">OOH</span>
-            </div>
-          </div>
-
-          <div class="fseg f2"><div class="name">Booked Appointment</div></div>
-          <div class="mrow">
-            <div class="cat sched">Scheduling</div>
-            <div class="role-col">Scheduler<small>In‑house (sometimes agency)</small></div>
-            <div class="tech">
-              <span class="t">Website</span>
-              <span class="t">Phones</span>
-              <span class="t">Call tracking</span>
-            </div>
-          </div>
-
-          <div class="fseg f3"><div class="name">Appointment Showed</div></div>
-          <div class="mrow">
-            <div class="cat sched">Scheduling</div>
-            <div class="role-col">Scheduler + Treatment Coordinator</div>
-            <div class="tech">
-              <span class="t">CRM</span>
-              <span class="t">SMS / priming</span>
-              <span class="t">Confirmation flow</span>
-            </div>
-          </div>
-
-          <div class="fseg f4"><div class="name">Case Accepted</div></div>
-          <div class="mrow">
-            <div class="cat close">Consult + Close</div>
-            <div class="role-col">Treatment Coordinator + Doctor</div>
-            <div class="tech">
-              <span class="t">CRM</span>
-              <span class="t">PMS</span>
-              <span class="t">Financing tools</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="chrome-bottom">
-        <div>The growth engine · Funnel, roles, and stack</div>
-        <div class="ix"><span class="n">05</span><span>/ 16</span></div>
-      </div>
-    </section>
-
-    <!-- ========================================================
-         SLIDE 3 — Customer Profiles
-         ======================================================== -->
-    <section class="slide s4 has-chapter" data-slide="3">
-      <div class="chrome-top">
-        <div class="brand"><img src="assets/sga-logo.svg" alt="SGA" /></div>
-        <div class="meta">Chapter 02 · Patient Profiles</div>
-      </div>
-
-      <div class="intro-header">
-        <div class="eyebrow">Who We're Marketing To</div>
-        <h2>Customer profiles — <em>high‑trust</em> smile rehabilitation.</h2>
-        <p class="sub">
-          Full‑arch, full‑mouth, and implant cases live and die on emotional
-          trust. These are the three profiles we build messaging around.
-        </p>
-      </div>
-
-      <div class="body">
-        <div class="grid-3">
-          <div class="persona">
-            <div class="hdr">
-              <div class="avatar">01</div>
-              <div class="tag">Family Advocate</div>
-            </div>
-            <h4>Urging a family member into a dental implant procedure.</h4>
-            <div class="bars">
-              <div class="bar"><span>Difficulty convincing their family member</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">10</span></div>
-              <div class="bar"><span>Uncertainty finding a trustworthy specialist</span><div class="track"><div class="fill" style="width:90%"></div></div><span class="val">9</span></div>
-              <div class="bar"><span>Concerns about long‑term durability</span><div class="track"><div class="fill" style="width:80%"></div></div><span class="val">8</span></div>
-              <div class="bar"><span>Anxiety about possible complications</span><div class="track"><div class="fill" style="width:70%"></div></div><span class="val">7</span></div>
-              <div class="bar"><span>Concerns over high upfront costs</span><div class="track"><div class="fill" style="width:60%"></div></div><span class="val">6</span></div>
-              <div class="bar"><span>Overwhelming amount of information</span><div class="track"><div class="fill" style="width:50%"></div></div><span class="val">5</span></div>
-            </div>
-            <div class="blurb">
-              <span class="lbl">What matters most</span>
-              A trustworthy specialist they can hand their loved one off to — with clear proof the outcome lasts.
-            </div>
-          </div>
-
-          <div class="persona p2">
-            <div class="hdr">
-              <div class="avatar p2">02</div>
-              <div class="tag">Recovery Patient</div>
-            </div>
-            <h4>In addiction recovery — bad teeth from past drug use.</h4>
-            <div class="bars">
-              <div class="bar"><span>Overwhelming embarrassment</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">10</span></div>
-              <div class="bar"><span>Fear of being judged</span><div class="track"><div class="fill" style="width:90%"></div></div><span class="val">9</span></div>
-              <div class="bar"><span>Fear of relapse triggers</span><div class="track"><div class="fill" style="width:80%"></div></div><span class="val">8</span></div>
-              <div class="bar"><span>Financial pressure</span><div class="track"><div class="fill" style="width:70%"></div></div><span class="val">7</span></div>
-              <div class="bar"><span>Concern about longevity</span><div class="track"><div class="fill" style="width:60%"></div></div><span class="val">6</span></div>
-              <div class="bar"><span>Anxiety over commitment</span><div class="track"><div class="fill" style="width:50%"></div></div><span class="val">5</span></div>
-            </div>
-            <div class="blurb">
-              <span class="lbl">What matters most</span>
-              A judgment‑free room — empathy first, clinical second. Cost is a concern, not the barrier.
-            </div>
-          </div>
-
-          <div class="persona p3">
-            <div class="hdr">
-              <div class="avatar p3">03</div>
-              <div class="tag">Prior Bad Dental Work</div>
-            </div>
-            <h4>Has had bad dental work done — looking to start over.</h4>
-            <div class="bars">
-              <div class="bar"><span>Lack of real expertise</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">10</span></div>
-              <div class="bar"><span>Looming possibility of failure</span><div class="track"><div class="fill" style="width:90%"></div></div><span class="val">9</span></div>
-              <div class="bar"><span>Inconsistent opinions</span><div class="track"><div class="fill" style="width:80%"></div></div><span class="val">8</span></div>
-              <div class="bar"><span>Insufficient reassurance</span><div class="track"><div class="fill" style="width:70%"></div></div><span class="val">7</span></div>
-              <div class="bar"><span>Hidden costs</span><div class="track"><div class="fill" style="width:60%"></div></div><span class="val">6</span></div>
-              <div class="bar"><span>Overcomplicated explanations</span><div class="track"><div class="fill" style="width:50%"></div></div><span class="val">5</span></div>
-            </div>
-            <div class="blurb">
-              <span class="lbl">What matters most</span>
-              Deep expertise and transparent communication. Credentials + proof are the only currency that counts.
-            </div>
-          </div>
-        </div>
-
-        <div class="quote">
-          <div class="mark">“</div>
-          <div>
-            <p>
-              I'm honestly scared to go to the dentist because I'm terrified they'll
-              look at my teeth and just see my past. I know how bad they look, and I'm
-              so worried they'll judge me for it or treat me differently once they find
-              out about my history. It's like I can't shake the feeling that they'll
-              be thinking, <em>‘Well, this is what drug use does,’</em> and I'll just end up
-              feeling even worse about myself.
+          <div class="ac-card ac1">
+            <div class="ac-num">01</div>
+            <div class="ac-tag">Clean Data + Reporting</div>
+            <h3>Clarity on what's <em>actually</em> working.</h3>
+            <p class="ac-lead">
+              DTC practices spend a lot. Without clean data they can't tell which
+              channel earned the case — so they double down on the wrong things.
             </p>
-            <div class="attr">Persona 02 · Recovery Patient</div>
+            <ul>
+              <li>End‑to‑end conversion tracking (click → booked → closed)</li>
+              <li>Channel ROI and CPL by source, weekly</li>
+              <li>Booked‑appointment + closed‑case attribution</li>
+            </ul>
+          </div>
+
+          <div class="ac-card ac2">
+            <div class="ac-num">02</div>
+            <div class="ac-tag">Agency Accountability</div>
+            <h3>Leverage agencies — and <em>hold them</em> to outcomes.</h3>
+            <p class="ac-lead">
+              Best‑in‑class agencies are an asset. They become a liability without
+              a pro on the practice side reading the data and asking hard questions.
+            </p>
+            <ul>
+              <li>Vetting + onboarding the right agency for the work</li>
+              <li>Weekly performance reviews + scorecards</li>
+              <li>Spend authorization tied to readiness gates</li>
+            </ul>
+          </div>
+
+          <div class="ac-card ac3">
+            <div class="ac-num">03</div>
+            <div class="ac-tag">Sales + Full‑Arch Expertise</div>
+            <h3>Bring in the <em>specialists</em>.</h3>
+            <p class="ac-lead">
+              A great paid‑media strategy doesn't matter if the consult can't
+              close. We bring sales coaching and full‑arch marketing expertise
+              into the practice.
+            </p>
+            <ul>
+              <li>Treatment‑coordinator coaching</li>
+              <li>Full‑arch consult playbook + roleplay</li>
+              <li>Financing scripts + objection handling</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="ac-callout">
+          <span class="ac-stat">4 yrs<small>Modis Playbook</small></span>
+          <div class="ac-text">
+            <p>
+              <strong>This playbook was honed over four years at Modis Dental Partners.</strong>
+              We're rolling it out across a select group of SGA's implant and
+              cosmetic practices — Ressler is one of them.
+            </p>
           </div>
         </div>
       </div>
 
       <div class="chrome-bottom">
-        <div>Customer Profiles · High‑Trust Smile Rehabilitation</div>
-        <div class="ix"><span class="n">06</span><span>/ 16</span></div>
-      </div>
-    </section>
-
-    <!-- ========================================================
-         SLIDE 4 — Team roles table
-         ======================================================== -->
-    <section class="slide s5 has-chapter" data-slide="4">
-      <div class="chrome-top">
-        <div class="brand"><img src="assets/sga-logo.svg" alt="SGA" /></div>
-        <div class="meta">Chapter 02 · Team Roles</div>
-      </div>
-
-      <div class="intro-header">
-        <div class="eyebrow">Team Roles</div>
-        <h2>Team roles in <em>high‑trust</em> treatment marketing.</h2>
-        <p class="sub">
-          Every stage has an owner, a patient action, a messaging priority, and a
-          conversion benchmark. Clarity is the growth engine.
-        </p>
-      </div>
-
-      <div class="body">
-        <div class="roles-grid">
-          <div class="h-empty"></div>
-          <div class="th">Role in Process</div>
-          <div class="th">Patient Action</div>
-          <div class="th">Important Messaging</div>
-          <div class="th ctr">Conversion</div>
-
-          <div class="fseg f1"><div class="name">Potential Patient Lead</div><div class="hint">Lead Gen</div></div>
-          <div class="cell role-c">Agency</div>
-          <div class="cell">Sees an ad, fills in a form online (sometimes calls in).</div>
-          <div class="cell msg-c">
-            <ul>
-              <li>Emotional hook pointing at the outcome of the procedure</li>
-              <li>— or — educational message that the procedure is available</li>
-            </ul>
-          </div>
-          <div class="cell ctr"><span class="bench-na">Top of funnel</span></div>
-
-          <div class="fseg f2"><div class="name">Booked Appointment</div><div class="hint">Scheduling</div></div>
-          <div class="cell role-c">Scheduler<small>Mostly in‑house, sometimes agency</small></div>
-          <div class="cell">Picks up a call from the practice, commits to the appointment.</div>
-          <div class="cell msg-c">
-            <ul>
-              <li>Qualify the patient financially</li>
-              <li>Prime the patient (price + procedure)</li>
-              <li>Build the UVP</li>
-              <li>Create scarcity around the appointment</li>
-            </ul>
-          </div>
-          <div class="cell ctr"><span class="bench-chip">10 – 25%<small>of leads book</small></span></div>
-
-          <div class="fseg f3"><div class="name">Appointment Showed</div><div class="hint">Scheduling</div></div>
-          <div class="cell role-c">Scheduler + Treatment Coordinator</div>
-          <div class="cell">Shows up for the appointment.</div>
-          <div class="cell msg-c">
-            <ul>
-              <li>Book within 48 hours of lead generation</li>
-              <li>Confirm the appointment</li>
-              <li>Send high‑quality priming materials</li>
-            </ul>
-          </div>
-          <div class="cell ctr"><span class="bench-chip">50 – 70%<small>of booked show</small></span></div>
-
-          <div class="fseg f4"><div class="name">Case Accepted</div><div class="hint">Consult + Close</div></div>
-          <div class="cell role-c">Treatment Coordinator + Doctor</div>
-          <div class="cell">Commits to treatment.</div>
-          <div class="cell msg-c">
-            <ul>
-              <li>Connect emotionally — empower them to decide</li>
-              <li>Educate and qualify financing options</li>
-            </ul>
-          </div>
-          <div class="cell ctr"><span class="bench-chip orange">25%<small>of shows close</small></span></div>
-        </div>
-      </div>
-
-      <div class="chrome-bottom">
-        <div>Team roles in high‑trust treatment marketing</div>
-        <div class="ix"><span class="n">07</span><span>/ 16</span></div>
+        <div>Advanced Care · Supercharging the DTC playbook</div>
+        <div class="ix"><span class="n">05</span><span>/ 17</span></div>
       </div>
     </section>
 
@@ -1181,7 +1077,7 @@
 
       <div class="chrome-bottom">
         <div>The strategic shift · Optimize, then pivot to full‑arch</div>
-        <div class="ix"><span class="n">08</span><span>/ 16</span></div>
+        <div class="ix"><span class="n">06</span><span>/ 17</span></div>
       </div>
     </section>
 
@@ -1272,7 +1168,7 @@
 
       <div class="chrome-bottom">
         <div>Four readiness pillars · Clinical · Operations · Financial · Marketing</div>
-        <div class="ix"><span class="n">09</span><span>/ 16</span></div>
+        <div class="ix"><span class="n">07</span><span>/ 17</span></div>
       </div>
     </section>
 
@@ -1327,7 +1223,7 @@
 
       <div class="chrome-bottom">
         <div>Operations readiness · Staff and schedule</div>
-        <div class="ix"><span class="n">10</span><span>/ 16</span></div>
+        <div class="ix"><span class="n">08</span><span>/ 17</span></div>
       </div>
     </section>
 
@@ -1409,7 +1305,7 @@
 
       <div class="chrome-bottom">
         <div>Financial readiness · Pricing, financing, and case economics</div>
-        <div class="ix"><span class="n">11</span><span>/ 16</span></div>
+        <div class="ix"><span class="n">09</span><span>/ 17</span></div>
       </div>
     </section>
 
@@ -1511,7 +1407,7 @@
 
       <div class="chrome-bottom">
         <div>The four‑pillar approach for Ressler</div>
-        <div class="ix"><span class="n">12</span><span>/ 16</span></div>
+        <div class="ix"><span class="n">10</span><span>/ 17</span></div>
       </div>
     </section>
 
@@ -1584,7 +1480,7 @@
 
       <div class="chrome-bottom">
         <div>Paid media summary · 829 Studios audit</div>
-        <div class="ix"><span class="n">13</span><span>/ 16</span></div>
+        <div class="ix"><span class="n">11</span><span>/ 17</span></div>
       </div>
     </section>
 
@@ -1691,7 +1587,7 @@
 
       <div class="chrome-bottom">
         <div>Agency partnership overview</div>
-        <div class="ix"><span class="n">14</span><span>/ 16</span></div>
+        <div class="ix"><span class="n">12</span><span>/ 17</span></div>
       </div>
     </section>
 
@@ -1819,7 +1715,273 @@
 
       <div class="chrome-bottom">
         <div>60‑day project plan · Ressler × SGA × 829 × Kim</div>
-        <div class="ix"><span class="n">15</span><span>/ 16</span></div>
+        <div class="ix"><span class="n">13</span><span>/ 17</span></div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 6 — Infrastructure (will be moved to back)
+         ======================================================== -->
+    <section class="slide s2 has-chapter" data-slide="2">
+      <div class="chrome-top">
+        <div class="brand"><img src="assets/sga-logo.svg" alt="SGA" /></div>
+        <div class="meta">Chapter 06 · How It Works</div>
+      </div>
+
+      <div class="intro-header">
+        <div class="eyebrow">Funnel · Ownership · Tech</div>
+        <h2>The patient funnel, <em>who owns it</em>, and the stack behind it.</h2>
+        <p class="sub">
+          One view across stages, team roles, and the tech that powers each step — so every
+          lead has a clear path from ad to closed case.
+        </p>
+      </div>
+
+      <div class="body">
+        <div class="funnel-stack">
+          <div class="col-label">Patient Stage</div>
+          <div class="mhead">
+            <div class="col-label">Category</div>
+            <div class="col-label">Team Role</div>
+            <div class="col-label">Tech Stack</div>
+          </div>
+
+          <div class="fseg f1"><div class="name">Potential Patient Lead</div></div>
+          <div class="mrow">
+            <div class="cat lead">Lead Generation</div>
+            <div class="role-col">Agency</div>
+            <div class="tech">
+              <span class="t">Google</span>
+              <span class="t">Meta</span>
+              <span class="t">Programmatic DSP</span>
+              <span class="t">TV</span>
+              <span class="t">Radio</span>
+              <span class="t">OOH</span>
+            </div>
+          </div>
+
+          <div class="fseg f2"><div class="name">Booked Appointment</div></div>
+          <div class="mrow">
+            <div class="cat sched">Scheduling</div>
+            <div class="role-col">Scheduler<small>In‑house (sometimes agency)</small></div>
+            <div class="tech">
+              <span class="t">Website</span>
+              <span class="t">Phones</span>
+              <span class="t">Call tracking</span>
+            </div>
+          </div>
+
+          <div class="fseg f3"><div class="name">Appointment Showed</div></div>
+          <div class="mrow">
+            <div class="cat sched">Scheduling</div>
+            <div class="role-col">Scheduler + Treatment Coordinator</div>
+            <div class="tech">
+              <span class="t">CRM</span>
+              <span class="t">SMS / priming</span>
+              <span class="t">Confirmation flow</span>
+            </div>
+          </div>
+
+          <div class="fseg f4"><div class="name">Case Accepted</div></div>
+          <div class="mrow">
+            <div class="cat close">Consult + Close</div>
+            <div class="role-col">Treatment Coordinator + Doctor</div>
+            <div class="tech">
+              <span class="t">CRM</span>
+              <span class="t">PMS</span>
+              <span class="t">Financing tools</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chrome-bottom">
+        <div>The growth engine · Funnel, roles, and stack</div>
+        <div class="ix"><span class="n">14</span><span>/ 17</span></div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 3 — Customer Profiles
+         ======================================================== -->
+    <section class="slide s4 has-chapter" data-slide="3">
+      <div class="chrome-top">
+        <div class="brand"><img src="assets/sga-logo.svg" alt="SGA" /></div>
+        <div class="meta">Chapter 06 · Patient Profiles</div>
+      </div>
+
+      <div class="intro-header">
+        <div class="eyebrow">Who We're Marketing To</div>
+        <h2>Customer profiles — <em>high‑trust</em> smile rehabilitation.</h2>
+        <p class="sub">
+          Full‑arch, full‑mouth, and implant cases live and die on emotional
+          trust. These are the three profiles we build messaging around.
+        </p>
+      </div>
+
+      <div class="body">
+        <div class="grid-3">
+          <div class="persona">
+            <div class="hdr">
+              <div class="avatar">01</div>
+              <div class="tag">Family Advocate</div>
+            </div>
+            <h4>Urging a family member into a dental implant procedure.</h4>
+            <div class="bars">
+              <div class="bar"><span>Difficulty convincing their family member</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">10</span></div>
+              <div class="bar"><span>Uncertainty finding a trustworthy specialist</span><div class="track"><div class="fill" style="width:90%"></div></div><span class="val">9</span></div>
+              <div class="bar"><span>Concerns about long‑term durability</span><div class="track"><div class="fill" style="width:80%"></div></div><span class="val">8</span></div>
+              <div class="bar"><span>Anxiety about possible complications</span><div class="track"><div class="fill" style="width:70%"></div></div><span class="val">7</span></div>
+              <div class="bar"><span>Concerns over high upfront costs</span><div class="track"><div class="fill" style="width:60%"></div></div><span class="val">6</span></div>
+              <div class="bar"><span>Overwhelming amount of information</span><div class="track"><div class="fill" style="width:50%"></div></div><span class="val">5</span></div>
+            </div>
+            <div class="blurb">
+              <span class="lbl">What matters most</span>
+              A trustworthy specialist they can hand their loved one off to — with clear proof the outcome lasts.
+            </div>
+          </div>
+
+          <div class="persona p2">
+            <div class="hdr">
+              <div class="avatar p2">02</div>
+              <div class="tag">Recovery Patient</div>
+            </div>
+            <h4>In addiction recovery — bad teeth from past drug use.</h4>
+            <div class="bars">
+              <div class="bar"><span>Overwhelming embarrassment</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">10</span></div>
+              <div class="bar"><span>Fear of being judged</span><div class="track"><div class="fill" style="width:90%"></div></div><span class="val">9</span></div>
+              <div class="bar"><span>Fear of relapse triggers</span><div class="track"><div class="fill" style="width:80%"></div></div><span class="val">8</span></div>
+              <div class="bar"><span>Financial pressure</span><div class="track"><div class="fill" style="width:70%"></div></div><span class="val">7</span></div>
+              <div class="bar"><span>Concern about longevity</span><div class="track"><div class="fill" style="width:60%"></div></div><span class="val">6</span></div>
+              <div class="bar"><span>Anxiety over commitment</span><div class="track"><div class="fill" style="width:50%"></div></div><span class="val">5</span></div>
+            </div>
+            <div class="blurb">
+              <span class="lbl">What matters most</span>
+              A judgment‑free room — empathy first, clinical second. Cost is a concern, not the barrier.
+            </div>
+          </div>
+
+          <div class="persona p3">
+            <div class="hdr">
+              <div class="avatar p3">03</div>
+              <div class="tag">Prior Bad Dental Work</div>
+            </div>
+            <h4>Has had bad dental work done — looking to start over.</h4>
+            <div class="bars">
+              <div class="bar"><span>Lack of real expertise</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">10</span></div>
+              <div class="bar"><span>Looming possibility of failure</span><div class="track"><div class="fill" style="width:90%"></div></div><span class="val">9</span></div>
+              <div class="bar"><span>Inconsistent opinions</span><div class="track"><div class="fill" style="width:80%"></div></div><span class="val">8</span></div>
+              <div class="bar"><span>Insufficient reassurance</span><div class="track"><div class="fill" style="width:70%"></div></div><span class="val">7</span></div>
+              <div class="bar"><span>Hidden costs</span><div class="track"><div class="fill" style="width:60%"></div></div><span class="val">6</span></div>
+              <div class="bar"><span>Overcomplicated explanations</span><div class="track"><div class="fill" style="width:50%"></div></div><span class="val">5</span></div>
+            </div>
+            <div class="blurb">
+              <span class="lbl">What matters most</span>
+              Deep expertise and transparent communication. Credentials + proof are the only currency that counts.
+            </div>
+          </div>
+        </div>
+
+        <div class="quote">
+          <div class="mark">“</div>
+          <div>
+            <p>
+              I'm honestly scared to go to the dentist because I'm terrified they'll
+              look at my teeth and just see my past. I know how bad they look, and I'm
+              so worried they'll judge me for it or treat me differently once they find
+              out about my history. It's like I can't shake the feeling that they'll
+              be thinking, <em>‘Well, this is what drug use does,’</em> and I'll just end up
+              feeling even worse about myself.
+            </p>
+            <div class="attr">Persona 02 · Recovery Patient</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chrome-bottom">
+        <div>Customer Profiles · High‑Trust Smile Rehabilitation</div>
+        <div class="ix"><span class="n">15</span><span>/ 17</span></div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 4 — Team roles table
+         ======================================================== -->
+    <section class="slide s5 has-chapter" data-slide="4">
+      <div class="chrome-top">
+        <div class="brand"><img src="assets/sga-logo.svg" alt="SGA" /></div>
+        <div class="meta">Chapter 06 · Team Roles</div>
+      </div>
+
+      <div class="intro-header">
+        <div class="eyebrow">Team Roles</div>
+        <h2>Team roles in <em>high‑trust</em> treatment marketing.</h2>
+        <p class="sub">
+          Every stage has an owner, a patient action, a messaging priority, and a
+          conversion benchmark. Clarity is the growth engine.
+        </p>
+      </div>
+
+      <div class="body">
+        <div class="roles-grid">
+          <div class="h-empty"></div>
+          <div class="th">Role in Process</div>
+          <div class="th">Patient Action</div>
+          <div class="th">Important Messaging</div>
+          <div class="th ctr">Conversion</div>
+
+          <div class="fseg f1"><div class="name">Potential Patient Lead</div><div class="hint">Lead Gen</div></div>
+          <div class="cell role-c">Agency</div>
+          <div class="cell">Sees an ad, fills in a form online (sometimes calls in).</div>
+          <div class="cell msg-c">
+            <ul>
+              <li>Emotional hook pointing at the outcome of the procedure</li>
+              <li>— or — educational message that the procedure is available</li>
+            </ul>
+          </div>
+          <div class="cell ctr"><span class="bench-na">Top of funnel</span></div>
+
+          <div class="fseg f2"><div class="name">Booked Appointment</div><div class="hint">Scheduling</div></div>
+          <div class="cell role-c">Scheduler<small>Mostly in‑house, sometimes agency</small></div>
+          <div class="cell">Picks up a call from the practice, commits to the appointment.</div>
+          <div class="cell msg-c">
+            <ul>
+              <li>Qualify the patient financially</li>
+              <li>Prime the patient (price + procedure)</li>
+              <li>Build the UVP</li>
+              <li>Create scarcity around the appointment</li>
+            </ul>
+          </div>
+          <div class="cell ctr"><span class="bench-chip">10 – 25%<small>of leads book</small></span></div>
+
+          <div class="fseg f3"><div class="name">Appointment Showed</div><div class="hint">Scheduling</div></div>
+          <div class="cell role-c">Scheduler + Treatment Coordinator</div>
+          <div class="cell">Shows up for the appointment.</div>
+          <div class="cell msg-c">
+            <ul>
+              <li>Book within 48 hours of lead generation</li>
+              <li>Confirm the appointment</li>
+              <li>Send high‑quality priming materials</li>
+            </ul>
+          </div>
+          <div class="cell ctr"><span class="bench-chip">50 – 70%<small>of booked show</small></span></div>
+
+          <div class="fseg f4"><div class="name">Case Accepted</div><div class="hint">Consult + Close</div></div>
+          <div class="cell role-c">Treatment Coordinator + Doctor</div>
+          <div class="cell">Commits to treatment.</div>
+          <div class="cell msg-c">
+            <ul>
+              <li>Connect emotionally — empower them to decide</li>
+              <li>Educate and qualify financing options</li>
+            </ul>
+          </div>
+          <div class="cell ctr"><span class="bench-chip orange">25%<small>of shows close</small></span></div>
+        </div>
+      </div>
+
+      <div class="chrome-bottom">
+        <div>Team roles in high‑trust treatment marketing</div>
+        <div class="ix"><span class="n">16</span><span>/ 17</span></div>
       </div>
     </section>
 
@@ -1920,7 +2082,7 @@
 
       <div class="chrome-bottom">
         <div>Cadence + close · Ressler × SGA × 829 × Kim</div>
-        <div class="ix"><span class="n">16</span><span>/ 16</span></div>
+        <div class="ix"><span class="n">17</span><span>/ 17</span></div>
       </div>
     </section>
 
