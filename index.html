@@ -523,29 +523,51 @@
 
   /* ============ SLIDE — Site CRO Audit (NEW) ============ */
   .sCRO{background:linear-gradient(180deg,#FFFFFF,#F4F1E8)}
-  .sCRO .body{padding:14px 56px 56px 56px;display:flex;flex-direction:column;gap:14px}
-  .cro-lifts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;flex:1;min-height:0}
-  .cro-lift{background:var(--paper);border:1px solid var(--ink-08);border-radius:14px;padding:18px 20px 18px;display:flex;flex-direction:column;position:relative;overflow:hidden}
-  .cro-lift::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--sga-blue)}
-  .cro-lift:nth-child(1)::before{background:var(--sga-orange)}
-  .cro-lift:nth-child(2)::before{background:var(--sga-blue)}
-  .cro-lift:nth-child(3)::before{background:var(--sga-cyan)}
-  .cro-lift .cro-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:10px}
-  .cro-lift .cro-num{font:400 36px/1 var(--serif);color:var(--sga-blue-ink);letter-spacing:-0.02em}
-  .cro-lift:nth-child(1) .cro-num{color:var(--sga-orange)}
-  .cro-lift:nth-child(2) .cro-num{color:var(--sga-blue)}
-  .cro-lift:nth-child(3) .cro-num{color:var(--sga-cyan)}
-  .cro-lift .cro-tag{font:700 8.5px/1 var(--sans);letter-spacing:.20em;text-transform:uppercase;color:var(--ink-60);background:var(--ink-04);padding:6px 9px;border-radius:6px;align-self:center}
-  .cro-lift h3{font:500 17px/1.2 var(--serif);color:var(--sga-blue-ink);letter-spacing:-0.01em;margin:4px 0 8px}
-  .cro-lift h3 em{font-style:italic;color:var(--sga-blue)}
-  .cro-lift .cro-found p{font:400 12px/1.45 var(--sans);color:var(--ink-60);margin:0}
-  .cro-lift .cro-fix{margin-top:auto;padding-top:14px;border-top:1px dashed var(--ink-15);display:flex;gap:10px;align-items:flex-start}
-  .cro-lift .cro-fix .arrow{font:700 16px/1 var(--sans);color:var(--sga-blue);flex-shrink:0;margin-top:1px}
-  .cro-lift .cro-fix .fix-text{font:500 12px/1.4 var(--sans);color:var(--sga-blue-ink);margin:0}
-  .cro-lift .cro-fix .fix-text strong{color:var(--sga-blue);font-weight:700}
-  .cro-handoff{display:flex;align-items:center;gap:12px;padding:12px 18px;background:rgba(45,111,183,.06);border-left:3px solid var(--sga-blue);border-radius:6px}
+  .sCRO .body{padding:10px 48px 38px 48px;display:flex;flex-direction:column;gap:12px}
+
+  /* Score frame: overall tile + 6-bar scorecard */
+  .cro-grade{display:grid;grid-template-columns:248px 1fr;gap:14px}
+  .cro-overall{background:linear-gradient(160deg,var(--sga-blue-ink) 0%,#15355A 100%);border-radius:14px;padding:16px 18px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+  .cro-overall::before{content:"";position:absolute;right:-30px;top:-30px;width:140px;height:140px;background:radial-gradient(circle,rgba(196,211,71,.22),transparent 65%);pointer-events:none}
+  .cro-overall .label{font:700 8.5px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+  .cro-overall .score{font:400 56px/1 var(--serif);letter-spacing:-0.02em;margin-top:6px;color:#fff}
+  .cro-overall .score .denom{font:400 22px/1 var(--serif);color:rgba(255,255,255,.5);margin-left:4px}
+  .cro-overall .status{display:inline-block;font:700 9px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#FFC871;background:rgba(255,193,71,.18);padding:6px 9px;border-radius:6px;align-self:flex-start;margin-top:8px}
+  .cro-overall .bench{font:500 10.5px/1.45 var(--sans);color:rgba(255,255,255,.78);margin-top:12px;position:relative;z-index:1}
+  .cro-overall .bench strong{color:#fff;font-weight:700}
+
+  .cro-bars{background:var(--paper);border:1px solid var(--ink-08);border-radius:14px;padding:12px 16px;display:flex;flex-direction:column;gap:8px;justify-content:center}
+  .cro-bar{display:grid;grid-template-columns:215px 1fr 30px;align-items:center;gap:12px}
+  .cro-bar .name{color:var(--sga-blue-ink);font:700 10.5px/1.1 var(--sans);letter-spacing:.02em}
+  .cro-bar .name small{display:block;font-weight:500;color:var(--ink-60);font-size:9.5px;letter-spacing:0;margin-top:2px;text-transform:none;line-height:1.25}
+  .cro-bar .track{background:var(--ink-04);height:8px;border-radius:4px;position:relative;overflow:hidden}
+  .cro-bar .fill{position:absolute;left:0;top:0;bottom:0;border-radius:4px;background:var(--sga-blue)}
+  .cro-bar.bad .fill{background:#C92338}
+  .cro-bar.warn .fill{background:#E8A22A}
+  .cro-bar.okay .fill{background:var(--sga-lime-deep)}
+  .cro-bar.good .fill{background:var(--sga-blue)}
+  .cro-bar .num{font:700 13px/1 var(--mono);color:var(--sga-blue-ink);text-align:right}
+
+  /* Evidence row: screenshot + sentiment callout */
+  .cro-evidence{display:grid;grid-template-columns:280px 1fr;gap:14px}
+  .cro-shot{border-radius:12px;overflow:hidden;border:1px solid var(--ink-08);background:var(--ink-04);position:relative;height:178px}
+  .cro-shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center}
+  .cro-shot .shot-tag{position:absolute;top:8px;left:8px;font:700 8px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#fff;background:rgba(15,27,43,.78);padding:5px 9px;border-radius:6px}
+  .cro-shot .shot-foot{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;padding:7px 10px;font:700 8px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#fff;background:linear-gradient(180deg,transparent,rgba(15,27,43,.85))}
+
+  .cro-sentiment{background:var(--paper);border:1px solid var(--ink-08);border-radius:14px;padding:13px 18px;display:flex;flex-direction:column;gap:6px}
+  .cro-sentiment h4{font:700 9.5px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--sga-orange);margin:0;display:flex;align-items:center;gap:8px}
+  .cro-sentiment h4::before{content:"";width:18px;height:2px;background:var(--sga-orange)}
+  .cro-sentiment .row{display:grid;grid-template-columns:130px 1fr;gap:12px;align-items:start;padding:6px 0;border-bottom:1px dashed var(--ink-08)}
+  .cro-sentiment .row .lbl{font:700 9px/1.2 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-60)}
+  .cro-sentiment .row .val{font:500 11.5px/1.4 var(--sans);color:var(--sga-blue-ink)}
+  .cro-sentiment .row .val em{font-style:italic;color:var(--sga-blue);font-weight:600}
+  .cro-sentiment .takeaway{margin-top:4px;padding:9px 12px;background:rgba(196,211,71,.18);border-left:3px solid var(--sga-lime-deep);border-radius:4px;font:500 11.5px/1.4 var(--sans);color:var(--sga-blue-ink)}
+  .cro-sentiment .takeaway strong{color:var(--sga-lime-deep);font-weight:700}
+
+  .cro-handoff{display:flex;align-items:center;gap:12px;padding:10px 16px;background:rgba(45,111,183,.06);border-left:3px solid var(--sga-blue);border-radius:6px}
   .cro-handoff .icon{color:var(--sga-blue);font-weight:700;font-size:18px;line-height:1}
-  .cro-handoff p{font:500 12.5px/1.4 var(--sans);color:var(--sga-blue-ink);margin:0}
+  .cro-handoff p{font:500 12px/1.4 var(--sans);color:var(--sga-blue-ink);margin:0}
   .cro-handoff p strong{color:var(--sga-blue);font-weight:700}
   .audit-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;flex:1;min-height:0}
   .audit-col{background:var(--paper);border:1px solid var(--ink-08);border-radius:12px;padding:14px 18px 16px;display:flex;flex-direction:column;min-height:0}
@@ -1406,61 +1428,90 @@
       </div>
 
       <div class="intro-header">
-        <div class="eyebrow">Site CRO Audit</div>
-        <h2>Three lifts the current site is <em>leaving on the table</em>.</h2>
+        <div class="eyebrow">Site CRO Audit · Scored Framework</div>
+        <h2>resslerdental.com scores <em>47 / 100</em> — significant lift available.</h2>
         <p class="sub">
-          Quick read on resslerdental.com and /special‑offers before the
-          redesign. Three priority gaps — what we see today, and what each one
-          looks like when it's fixed.
+          We graded the site on six factors weighted by impact, benchmarked it
+          against ClearChoice, Aspen Dental, and the top local Delray
+          competitor, and pulled the patterns from 99 real Healthgrades reviews.
         </p>
       </div>
 
       <div class="body">
 
-        <div class="cro-lifts">
+        <!-- Section A: Overall + 6-bar scorecard -->
+        <div class="cro-grade">
 
-          <div class="cro-lift">
-            <div class="cro-head">
-              <div class="cro-num">01</div>
-              <div class="cro-tag">Above the fold</div>
+          <div class="cro-overall">
+            <div>
+              <div class="label">CRO Audit Score</div>
+              <div class="score">47<span class="denom">/ 100</span></div>
+              <div class="status">Significant Lift</div>
             </div>
-            <h3>The $129 special is <em>buried</em>.</h3>
-            <div class="cro-found">
-              <p>Homepage and /special‑offers both lead with brand and credentials. The promotion patients arrived for sits four sections down.</p>
-            </div>
-            <div class="cro-fix">
-              <span class="arrow">›</span>
-              <p class="fix-text"><strong>Lift:</strong> hero badges the offer with a single primary CTA — "Claim Your $129 Exam" — and trust stats sit directly under the headline.</p>
+            <div class="bench">
+              Behind <strong>ClearChoice</strong> and <strong>Aspen</strong> on offer clarity, tracking, and review volume; ahead of the top local Delray competitor on conversion mechanics.
             </div>
           </div>
 
-          <div class="cro-lift">
-            <div class="cro-head">
-              <div class="cro-num">02</div>
-              <div class="cro-tag">Urgency</div>
+          <div class="cro-bars">
+            <div class="cro-bar warn">
+              <div class="name">Above‑the‑Fold Clarity <small>15% · hero · offer · primary CTA</small></div>
+              <div class="track"><div class="fill" style="width:55%"></div></div>
+              <div class="num">55</div>
             </div>
-            <h3>Every offer says "Expires:" with the date <em>left blank</em>.</h3>
-            <div class="cro-found">
-              <p>Three discounted services — exam, implant consult, gum treatment — all show empty expiration fields. Urgency is gone before it lands.</p>
+            <div class="cro-bar warn">
+              <div class="name">Trust &amp; Social Proof <small>20% · credentials, before/afters, badges; missing live count</small></div>
+              <div class="track"><div class="fill" style="width:65%"></div></div>
+              <div class="num">65</div>
             </div>
-            <div class="cro-fix">
-              <span class="arrow">›</span>
-              <p class="fix-text"><strong>Lift:</strong> live expirations and a visible countdown on every offer. Patients book this week, not "someday".</p>
+            <div class="cro-bar bad">
+              <div class="name">Conversion Path <small>20% · 0 forms, no chat, financing not surfaced</small></div>
+              <div class="track"><div class="fill" style="width:45%"></div></div>
+              <div class="num">45</div>
+            </div>
+            <div class="cro-bar bad">
+              <div class="name">Performance &amp; Accessibility <small>15% · 4 H1s, polyfill.io risk, render‑blocking</small></div>
+              <div class="track"><div class="fill" style="width:40%"></div></div>
+              <div class="num">40</div>
+            </div>
+            <div class="cro-bar bad">
+              <div class="name">Tracking &amp; Measurement <small>10% · GTM only · no GA4 ID, no Pixel, CallRail on 1 page</small></div>
+              <div class="track"><div class="fill" style="width:35%"></div></div>
+              <div class="num">35</div>
+            </div>
+            <div class="cro-bar bad">
+              <div class="name">Sentiment Alignment <small>20% · site copy doesn't match what 99 reviews praise</small></div>
+              <div class="track"><div class="fill" style="width:35%"></div></div>
+              <div class="num">35</div>
             </div>
           </div>
 
-          <div class="cro-lift">
-            <div class="cro-head">
-              <div class="cro-num">03</div>
-              <div class="cro-tag">Friction</div>
+        </div>
+
+        <!-- Section B: Evidence -->
+        <div class="cro-evidence">
+
+          <div class="cro-shot">
+            <span class="shot-tag">Homepage · Above the fold</span>
+            <img src="assets/homepage_desktop.jpg" alt="resslerdental.com homepage above the fold" />
+          </div>
+
+          <div class="cro-sentiment">
+            <h4>The biggest miss · Sentiment Alignment</h4>
+            <div class="row">
+              <div class="lbl">Site leads with</div>
+              <div class="val"><em>"U‑Penn / NYU‑trained, top‑rated specialist"</em> — credentials, tech, and pedigree.</div>
             </div>
-            <h3>The mobile path <em>leaks</em>.</h3>
-            <div class="cro-found">
-              <p>No live chat for quick questions, flat click‑to‑call copy, and the HMO / Medicare / Medicaid exclusion buried mid‑page — wasted clicks from the wrong audience.</p>
+            <div class="row">
+              <div class="lbl">99 reviews praise</div>
+              <div class="val"><em>"painless · gentle · explained everything · Brooke"</em> — kindness, clarity, and a named hygienist.</div>
             </div>
-            <div class="cro-fix">
-              <span class="arrow">›</span>
-              <p class="fix-text"><strong>Lift:</strong> chat widget with prefilled FAQs (insurance, financing, same‑day), tighter CTA copy, and eligibility surfaced above the fold.</p>
+            <div class="row">
+              <div class="lbl">Competitor edge</div>
+              <div class="val">ClearChoice shows <em>25K+ reviews</em>; Aspen leads with <em>$29 exam</em> + <em>99% financing approval</em>; Norton publishes <em>"5.0 across 650+"</em>. Ressler shows stars with no count.</div>
+            </div>
+            <div class="takeaway">
+              <strong>Lift:</strong> Re‑lead with the words 99 real reviews already use, surface a public review count, and merchandise financing on the hero. Largest single gap, easiest to close.
             </div>
           </div>
 
@@ -1468,13 +1519,13 @@
 
         <div class="cro-handoff">
           <span class="icon">›</span>
-          <p>Mike walks through how the redesign closes <strong>all three</strong> on the next slide.</p>
+          <p>Mike walks through how the redesign moves these scores on the next slide.</p>
         </div>
 
       </div>
 
       <div class="chrome-bottom">
-        <div>Site CRO audit · Three priority lifts before the redesign demo</div>
+        <div>Site CRO audit · Scored against a 6‑category framework</div>
         <div class="ix"><span class="n">11</span><span>/ 21</span></div>
       </div>
     </section>
