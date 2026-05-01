@@ -518,6 +518,35 @@
   .score-pill .val.weak{background:rgba(243,111,33,.12);color:var(--sga-orange)}
   .score-pill .val.okay{background:rgba(196,211,71,.30);color:var(--sga-lime-deep)}
   .score-pill .val.opp{background:rgba(45,111,183,.12);color:var(--sga-blue)}
+  .score-pill .val.bad{background:rgba(217,38,63,.12);color:#C92338}
+  .score-pill .val.warn{background:rgba(245,194,42,.22);color:#A56F00}
+
+  /* ============ SLIDE — Site CRO Audit (NEW) ============ */
+  .sCRO{background:linear-gradient(180deg,#FFFFFF,#F4F1E8)}
+  .sCRO .body{padding:14px 56px 56px 56px;display:flex;flex-direction:column;gap:14px}
+  .cro-lifts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;flex:1;min-height:0}
+  .cro-lift{background:var(--paper);border:1px solid var(--ink-08);border-radius:14px;padding:18px 20px 18px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+  .cro-lift::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--sga-blue)}
+  .cro-lift:nth-child(1)::before{background:var(--sga-orange)}
+  .cro-lift:nth-child(2)::before{background:var(--sga-blue)}
+  .cro-lift:nth-child(3)::before{background:var(--sga-cyan)}
+  .cro-lift .cro-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:10px}
+  .cro-lift .cro-num{font:400 36px/1 var(--serif);color:var(--sga-blue-ink);letter-spacing:-0.02em}
+  .cro-lift:nth-child(1) .cro-num{color:var(--sga-orange)}
+  .cro-lift:nth-child(2) .cro-num{color:var(--sga-blue)}
+  .cro-lift:nth-child(3) .cro-num{color:var(--sga-cyan)}
+  .cro-lift .cro-tag{font:700 8.5px/1 var(--sans);letter-spacing:.20em;text-transform:uppercase;color:var(--ink-60);background:var(--ink-04);padding:6px 9px;border-radius:6px;align-self:center}
+  .cro-lift h3{font:500 17px/1.2 var(--serif);color:var(--sga-blue-ink);letter-spacing:-0.01em;margin:4px 0 8px}
+  .cro-lift h3 em{font-style:italic;color:var(--sga-blue)}
+  .cro-lift .cro-found p{font:400 12px/1.45 var(--sans);color:var(--ink-60);margin:0}
+  .cro-lift .cro-fix{margin-top:auto;padding-top:14px;border-top:1px dashed var(--ink-15);display:flex;gap:10px;align-items:flex-start}
+  .cro-lift .cro-fix .arrow{font:700 16px/1 var(--sans);color:var(--sga-blue);flex-shrink:0;margin-top:1px}
+  .cro-lift .cro-fix .fix-text{font:500 12px/1.4 var(--sans);color:var(--sga-blue-ink);margin:0}
+  .cro-lift .cro-fix .fix-text strong{color:var(--sga-blue);font-weight:700}
+  .cro-handoff{display:flex;align-items:center;gap:12px;padding:12px 18px;background:rgba(45,111,183,.06);border-left:3px solid var(--sga-blue);border-radius:6px}
+  .cro-handoff .icon{color:var(--sga-blue);font-weight:700;font-size:18px;line-height:1}
+  .cro-handoff p{font:500 12.5px/1.4 var(--sans);color:var(--sga-blue-ink);margin:0}
+  .cro-handoff p strong{color:var(--sga-blue);font-weight:700}
   .audit-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;flex:1;min-height:0}
   .audit-col{background:var(--paper);border:1px solid var(--ink-08);border-radius:12px;padding:14px 18px 16px;display:flex;flex-direction:column;min-height:0}
   .audit-col.found{border-top:3px solid var(--sga-orange)}
@@ -1317,10 +1346,10 @@
       <div class="body">
 
         <div class="scorecard">
-          <div class="score-pill"><span class="lbl">Account Structure</span><span class="val opp">Needs Work</span></div>
-          <div class="score-pill"><span class="lbl">Account Targeting</span><span class="val opp">Needs Work</span></div>
-          <div class="score-pill"><span class="lbl">Account Health</span><span class="val okay">Healthy</span></div>
-          <div class="score-pill"><span class="lbl">Overall</span><span class="val opp">Lift Available</span></div>
+          <div class="score-pill"><span class="lbl">Account Structure</span><span class="val bad">Needs Work</span></div>
+          <div class="score-pill"><span class="lbl">Account Targeting</span><span class="val bad">Needs Work</span></div>
+          <div class="score-pill"><span class="lbl">Account Health</span><span class="val warn">Okay</span></div>
+          <div class="score-pill"><span class="lbl">Overall</span><span class="val opp">High Opportunity for Growth</span></div>
         </div>
 
         <div class="audit-cols">
@@ -1370,7 +1399,7 @@
     <!-- ========================================================
          SLIDE — Site CRO Audit (NEW)
          ======================================================== -->
-    <section class="slide sM has-chapter" data-slide="11">
+    <section class="slide sCRO has-chapter" data-slide="11">
       <div class="chrome-top">
         <div class="brand"><img src="assets/sga-logo.svg" alt="SGA" /></div>
         <div class="meta">Section 02 · Site CRO Audit</div>
@@ -1378,55 +1407,74 @@
 
       <div class="intro-header">
         <div class="eyebrow">Site CRO Audit</div>
-        <h2>A few clear <em>conversion lifts</em> on the current site.</h2>
+        <h2>Three lifts the current site is <em>leaving on the table</em>.</h2>
         <p class="sub">
-          Quick read on resslerdental.com — and the /special‑offers page —
-          before Mike walks through the redesign. What's working today, what's
-          leaving leads on the table, and where conversion can move first.
+          Quick read on resslerdental.com and /special‑offers before the
+          redesign. Three priority gaps — what we see today, and what each one
+          looks like when it's fixed.
         </p>
       </div>
 
       <div class="body">
 
-        <div class="scorecard">
-          <div class="score-pill"><span class="lbl">Hero &amp; Headline</span><span class="val opp">Needs Work</span></div>
-          <div class="score-pill"><span class="lbl">Special Offers Page</span><span class="val opp">Needs Work</span></div>
-          <div class="score-pill"><span class="lbl">Trust Signals</span><span class="val okay">Strong</span></div>
-          <div class="score-pill"><span class="lbl">CTA &amp; Friction</span><span class="val opp">Needs Work</span></div>
+        <div class="cro-lifts">
+
+          <div class="cro-lift">
+            <div class="cro-head">
+              <div class="cro-num">01</div>
+              <div class="cro-tag">Above the fold</div>
+            </div>
+            <h3>The $129 special is <em>buried</em>.</h3>
+            <div class="cro-found">
+              <p>Homepage and /special‑offers both lead with brand and credentials. The promotion patients arrived for sits four sections down.</p>
+            </div>
+            <div class="cro-fix">
+              <span class="arrow">›</span>
+              <p class="fix-text"><strong>Lift:</strong> hero badges the offer with a single primary CTA — "Claim Your $129 Exam" — and trust stats sit directly under the headline.</p>
+            </div>
+          </div>
+
+          <div class="cro-lift">
+            <div class="cro-head">
+              <div class="cro-num">02</div>
+              <div class="cro-tag">Urgency</div>
+            </div>
+            <h3>Every offer says "Expires:" with the date <em>left blank</em>.</h3>
+            <div class="cro-found">
+              <p>Three discounted services — exam, implant consult, gum treatment — all show empty expiration fields. Urgency is gone before it lands.</p>
+            </div>
+            <div class="cro-fix">
+              <span class="arrow">›</span>
+              <p class="fix-text"><strong>Lift:</strong> live expirations and a visible countdown on every offer. Patients book this week, not "someday".</p>
+            </div>
+          </div>
+
+          <div class="cro-lift">
+            <div class="cro-head">
+              <div class="cro-num">03</div>
+              <div class="cro-tag">Friction</div>
+            </div>
+            <h3>The mobile path <em>leaks</em>.</h3>
+            <div class="cro-found">
+              <p>No live chat for quick questions, flat click‑to‑call copy, and the HMO / Medicare / Medicaid exclusion buried mid‑page — wasted clicks from the wrong audience.</p>
+            </div>
+            <div class="cro-fix">
+              <span class="arrow">›</span>
+              <p class="fix-text"><strong>Lift:</strong> chat widget with prefilled FAQs (insurance, financing, same‑day), tighter CTA copy, and eligibility surfaced above the fold.</p>
+            </div>
+          </div>
+
         </div>
 
-        <div class="audit-cols">
-
-          <div class="audit-col found">
-            <h4><span class="who">We Found</span> · Conversion gaps on the live site</h4>
-            <ul>
-              <li><strong>$129 special is buried.</strong> The new‑patient offer doesn't appear above the fold on the homepage or /special‑offers — patients have to scroll to find it.</li>
-              <li><strong>Expiration dates are blank.</strong> All three offers say "Expires:" with nothing filled in — kills urgency on the page that should drive the most bookings.</li>
-              <li><strong>Trust stats are buried mid‑page.</strong> 26 years, 18,580 procedures, 6,345 patients show up four sections down instead of under the headline.</li>
-              <li><strong>Insurance exclusion is hidden.</strong> "We do not accept HMO / Medicare / Medicaid" sits deep in the copy — wasted clicks from price‑sensitive traffic.</li>
-              <li><strong>Click‑to‑call copy is flat.</strong> "Call us at 561.499.7400" doesn't sell the next step.</li>
-              <li><strong>No live chat.</strong> Mobile visitors asking "Do you take Aetna?" have no low‑friction path to convert.</li>
-            </ul>
-          </div>
-
-          <div class="audit-col fix">
-            <h4><span class="who">Quick Wins</span> · Move first on the existing site</h4>
-            <ul>
-              <li><strong>Pull the offer above the fold.</strong> Homepage hero badges the $129 special with a primary CTA right there.</li>
-              <li><strong>Fill expiration dates + add a countdown</strong> on every offer to restore urgency.</li>
-              <li><strong>Move trust stats and review count</strong> directly under the headline (e.g., "500+ 5‑star reviews · 26 years · U‑Penn / NYU trained").</li>
-              <li><strong>Lead the headline with location + service</strong> — "Cosmetic Dentist &amp; Implant Specialist Serving Delray Beach."</li>
-              <li><strong>Tighten CTA copy</strong> — "Claim Your $129 Exam" instead of "Schedule appointment."</li>
-              <li><strong>Add live chat with prefilled FAQs</strong> — insurance, financing, same‑day appointments.</li>
-            </ul>
-          </div>
-
+        <div class="cro-handoff">
+          <span class="icon">›</span>
+          <p>Mike walks through how the redesign closes <strong>all three</strong> on the next slide.</p>
         </div>
 
       </div>
 
       <div class="chrome-bottom">
-        <div>Site CRO audit · Quick lifts before Mike walks through the redesign</div>
+        <div>Site CRO audit · Three priority lifts before the redesign demo</div>
         <div class="ix"><span class="n">11</span><span>/ 21</span></div>
       </div>
     </section>
